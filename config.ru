@@ -1,0 +1,2 @@
+require './tasks'
+run TaskList
