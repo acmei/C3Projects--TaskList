@@ -9,4 +9,9 @@ class TaskList < Sinatra::Base
     erb :tasks
   end
 
+  post "/" do
+
+  	erb :tasks
+  end
+
 end
