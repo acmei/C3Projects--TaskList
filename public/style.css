@@ -28,3 +28,19 @@ a:hover {
 .form {
   margin: 30px;
 }
+
+.task_list {
+  text-align: left;
+}
+
+.task_list label {
+  display: block;
+}
+
+input[type=checkbox] + label {
+  background-color: blue;
+}
+
+input[type=checkbox]:checked {
+  background-color: blue;  
+}

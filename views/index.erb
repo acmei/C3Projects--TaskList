@@ -3,6 +3,12 @@
 
   <p><a href="/add_task">add a new task</a><p>
 
+  <form class="task_list">
+  	<% @all_tasks.each do |task| %>
+			<label><input type="checkbox" name="finished_tasks[]" value="___"><%= task[1] %> ... <%= task[2] %></label>
+  	<% end %>
+  </form>
+
   <pre>
   	<%= params %>
   </pre>

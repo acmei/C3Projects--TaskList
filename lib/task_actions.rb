@@ -10,6 +10,11 @@ module TaskList
       query!(statement)
   	end
 
+  	def all_tasks
+  		statement = "SELECT * FROM tasks"
+  		query!(statement)
+  	end
+
   end
 end
 
