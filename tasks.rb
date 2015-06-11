@@ -20,9 +20,9 @@ class TaskSite < Sinatra::Base
   end
 
   post "/add_task" do
-    @task = params[:task]
-    @desc = params[:desc]
-    @comp_date = params[:comp_date]
+    @task       = params[:task]
+    @desc       = params[:desc]
+    @comp_date  = params[:comp_date]
 
     tasks = TaskList::Actions.new("tasks.db")
     tasks.new_task(@task, @desc, @comp_date)
