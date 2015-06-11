@@ -12,13 +12,21 @@ class TaskSite < Sinatra::Base
   end
 
   post "/" do
-  	@task = params[:task]
-  	@desc = params[:desc]
-  	@comp_date = params[:comp_date]
-
-  	TaskList::Actions.new_task(@task, @desc, @comp_date)
-
   	erb :tasks
+  end
+
+  get "/add_task" do
+    erb :add_task
+  end
+
+  post "/add_task" do
+    @task = params[:task]
+    @desc = params[:desc]
+    @comp_date = params[:comp_date]
+
+    TaskList::Actions.new_task(@task, @desc, @comp_date)
+
+    erb :add_task
   end
 
 end

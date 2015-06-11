@@ -1,0 +1,21 @@
+<h2>Tasks</h2>
+<form action="" method="post" accept-charset="utf-8">
+  <fieldset>
+    <legend>Add a New Task</legend>
+    <label for="task">Task</label>
+    <input type="text" name="task" id="task">
+
+    <label for="desc">Description</label>
+    <input type="text" name="desc" id="desc">
+
+    <label for="comp_date">Completed Date</label>
+    <input type="text" name="comp_date" id="comp_date">
+
+    <input type="submit" value="Submit">    
+  </fieldset>
+</form>
+
+<a href="/">Click here to return to your task list</a>
+<pre>
+  <%= params %>
+</pre>
