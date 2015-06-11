@@ -5,7 +5,7 @@ require './lib/task_actions'
 
 class TaskSite < Sinatra::Base
   register Sinatra::Reloader
-  # auto_reload "./lib/task_actions"
+  also_reload './lib/task_actions'
 
   get "/" do
     erb :tasks
@@ -27,6 +27,7 @@ class TaskSite < Sinatra::Base
     tasks = TaskList::Actions.new("tasks.db")
     tasks.new_task(@task, @desc, @comp_date)
 
+    redirect '/'
     erb :tasks
   end
 
