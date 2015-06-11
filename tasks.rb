@@ -8,11 +8,11 @@ class TaskSite < Sinatra::Base
   also_reload './lib/task_actions'
 
   get "/" do
-    erb :tasks
+    erb :index
   end
 
   post "/" do
-  	erb :tasks
+  	erb :index
   end
 
   get "/add_task" do
@@ -24,8 +24,8 @@ class TaskSite < Sinatra::Base
     @desc       = params[:desc]
     @comp_date  = params[:comp_date]
 
-    tasks = TaskList::Actions.new("tasks.db")
-    tasks.new_task(@task, @desc, @comp_date)
+    @tasks = TaskList::Actions.new("tasks.db")
+    @tasks.new_task(@task, @desc, @comp_date)
 
     redirect '/'
     erb :tasks
