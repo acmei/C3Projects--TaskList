@@ -1,2 +1,2 @@
 require './tasks'
-run TaskList
+run TaskSite
