@@ -1,11 +1,13 @@
+/* Base Style */
 html {
-  width: 960px;
+  width: 900px;
   margin: 0 auto;
   background: #fff url(../images/linedpaper.png) repeat fixed center;
   font-family: 'Helvetica', Arial, sans-serif;
   font-size: 14px;
 }
 
+/* Links */
 a {
   color: #DC0095;
   font-size: 0.9em;
@@ -17,6 +19,12 @@ a:hover {
   color: #58BDE8;
 }
 
+/* Home Page */
+.home {
+  text-align: center;
+}
+
+/* Forms */
 .form {
-  padding: 40px;
+  margin: 30px;
 }
