@@ -16,3 +16,7 @@ a {
 a:hover {
   color: #58BDE8;
 }
+
+.form {
+  padding: 40px;
+}
