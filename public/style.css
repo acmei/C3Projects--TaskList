@@ -1,6 +1,6 @@
 /* Base Style */
 html {
-  width: 900px;
+  width: 600px;
   margin: 0 auto;
   background: #fff url(../images/linedpaper.png) repeat fixed center;
   font-family: 'Helvetica', Arial, sans-serif;
@@ -35,12 +35,4 @@ a:hover {
 
 .task_list label {
   display: block;
-}
-
-input[type=checkbox] + label {
-  background-color: blue;
-}
-
-input[type=checkbox]:checked {
-  background-color: blue;  
 }

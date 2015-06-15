@@ -5,8 +5,9 @@
 
   <form class="task_list">
   	<% @all_tasks.each do |task| %>
-			<label><input type="checkbox" name="finished_tasks[]" value="___"><%= task[1] %> ... <%= task[2] %></label>
+			<label><input type="checkbox" name="finished_tasks[]" value="<%= task[1] %>"><%= task[1] %></label>
   	<% end %>
+    <input type="submit" value="Submit"> 
   </form>
 
   <pre>
