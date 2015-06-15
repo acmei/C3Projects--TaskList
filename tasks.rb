@@ -15,6 +15,11 @@ class TaskSite < Sinatra::Base
   end
 
   post "/" do
+    @finished_tasks = params[:finished_tasks]
+
+    @tasks = TaskList::Actions.new("tasks.db")
+    @tasks.task_complete(@finished_tasks, @comp_date)
+
     erb :index
   end
 

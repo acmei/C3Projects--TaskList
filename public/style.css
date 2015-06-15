@@ -24,6 +24,15 @@ a:hover {
   text-align: center;
 }
 
+.list_header span {
+  text-align: left;
+  font-weight: bold;
+}
+
+.list_header {
+  margin-bottom: 10px;
+}
+
 /* Forms */
 .form {
   margin: 30px;
@@ -35,4 +44,23 @@ a:hover {
 
 .task_list label {
   display: block;
+}
+
+label span, .list_header span {
+  margin-left: 10px;
+  display: inline-block;
+  width: 175px;
+}
+
+.task-1 {
+
+
+}
+
+.task-2 {
+
+}
+
+.task-3 {
+  font-style: italic;
 }
