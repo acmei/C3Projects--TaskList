@@ -17,10 +17,12 @@ class TaskSite < Sinatra::Base
   post "/" do
     @finished_tasks = params[:finished_tasks]
 
-    @tasks = TaskList::Actions.new("tasks.db")
-    @tasks.task_complete(@finished_tasks, @comp_date)
+    puts @finished_tasks.class
 
-    erb :index
+    # @tasks = TaskList::Actions.new("tasks.db")
+    # @tasks.task_complete(@finished_tasks)
+
+    redirect '/completed'
   end
 
   get "/add_task" do
@@ -38,4 +40,17 @@ class TaskSite < Sinatra::Base
     redirect '/'
   end
 
+  get "/completed" do
+
+    erb:comp_date
+
+  end
+
+  post "/completed" do
+    redirect '/'
+  end
+
 end
+
+
+

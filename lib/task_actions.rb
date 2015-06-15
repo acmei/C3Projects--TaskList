@@ -15,11 +15,9 @@ module TaskList
   		query!(statement)
   	end
 
-    def task_complete(finished_tasks_array, new_comp_date)
-
-      finished_tasks_array.each do |finished_task|
-        statement = "UPDATE tasks SET comp_date=\"#{new_comp_date}\" where task=\"#{task}\";"
-      end
+    def task_complete(task, new_comp_date)
+      statement = "UPDATE tasks SET comp_date=\"#{new_comp_date}\" where task=\"#{task}\";"
+      query!(statement)
     end
 
   end

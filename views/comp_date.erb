@@ -1,0 +1,23 @@
+<h1>Completed Date</h1>
+<section class="form">
+  <form action="" method="post" accept-charset="utf-8">
+    <fieldset>
+      <legend>Enter Your Completed Date(s)</legend>
+      <p>Fill in the field(s) below to add a completed date to your task(s).</p>
+
+      <% @finished_tasks.each do |task|%>
+        <p><%= task %></p>
+        <p><label for="comp_date">Completed Date</label>
+        <input type="date" name=<% task %> id="comp_date"></p>
+      <% end %>
+
+      <p><input type="submit" value="Submit"></p>
+    </fieldset>
+  </form>
+</section>
+
+<p><a href="/">return to task list</a></p>
+
+<pre>
+  <%= params %>
+</pre>

@@ -4,7 +4,7 @@
   <p><a href="/add_task">add a new task</a><p>
 
   <div class="list_header"><span>Task</span><span>Description</span><span>Completed Date</span></div>
-  <form class="task_list">
+  <form class="task_list" action="" method="post" accept-charset="utf-8">
   	<% @all_tasks.each do |task| %>
 			<label><input type="checkbox" name="finished_tasks[]" value="<%= task[1] %>"><span class="task-1"><%= task[1] %></span> <span class="task-2"><%= task[2] %></span> <span class="task-3"><%= task[3] %></span></label>
   	<% end %>
