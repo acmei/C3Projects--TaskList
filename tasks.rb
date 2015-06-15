@@ -6,6 +6,7 @@ require './lib/task_actions'
 class TaskSite < Sinatra::Base
   register Sinatra::Reloader
   also_reload './lib/task_actions' # this isn't doing anything...
+  enable :sessions
 
 
   get "/" do
@@ -15,14 +16,14 @@ class TaskSite < Sinatra::Base
   end
 
   post "/" do
-    @finished_tasks = params[:finished_tasks]
-
+    # @finished_tasks = params[:finished_tasks]
+    session[:finished_tasks] = params[:finished_tasks]
     puts @finished_tasks.class
 
     # @tasks = TaskList::Actions.new("tasks.db")
     # @tasks.task_complete(@finished_tasks)
 
-    redirect '/completed'
+    redirect to('/completed')
   end
 
   get "/add_task" do
@@ -41,7 +42,7 @@ class TaskSite < Sinatra::Base
   end
 
   get "/completed" do
-
+    @finished_tasks = session[:finished_tasks]
     erb:comp_date
 
   end
