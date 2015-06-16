@@ -52,15 +52,14 @@ label span, .list_header span {
   width: 175px;
 }
 
-.task-1 {
-
-
-}
-
-.task-2 {
-
-}
-
 .task-3 {
   font-style: italic;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+}
+
+.task_to_update {
+  font-weight: bold;
 }

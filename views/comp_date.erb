@@ -4,11 +4,12 @@
     <fieldset>
       <legend>Enter Your Completed Date(s)</legend>
       <p>Fill in the field(s) below to add a completed date to your task(s).</p>
+      <p>Leave empty if you wish to remove the task's current completion date.</p>
 
       <% @finished_tasks.each do |task|%>
-        <p><%= task %></p>
+        <p class="task_to_update"><%= task %></p>
         <p><label for="comp_date">Completed Date</label>
-        <input type="date" name=<% task %> id="comp_date"></p>
+        <input type="date" name="<%= task %>" id="comp_date"></p>
       <% end %>
 
       <p><input type="submit" value="Submit"></p>
@@ -17,7 +18,7 @@
 </section>
 
 <p><a href="/">return to task list</a></p>
-
+<!-- 
 <pre>
   <%= params %>
-</pre>
+</pre> -->

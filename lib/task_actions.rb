@@ -15,7 +15,7 @@ module TaskList
   		query!(statement)
   	end
 
-    def task_complete(task, new_comp_date)
+    def update_comp_date(task, new_comp_date)
       statement = "UPDATE tasks SET comp_date=\"#{new_comp_date}\" where task=\"#{task}\";"
       query!(statement)
     end

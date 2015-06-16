@@ -16,10 +16,8 @@ class TaskSite < Sinatra::Base
   end
 
   post "/" do
-    # @finished_tasks = params[:finished_tasks]
     session[:finished_tasks] = params[:finished_tasks]
-    puts @finished_tasks.class
-
+    
     # @tasks = TaskList::Actions.new("tasks.db")
     # @tasks.task_complete(@finished_tasks)
 
@@ -43,11 +41,23 @@ class TaskSite < Sinatra::Base
 
   get "/completed" do
     @finished_tasks = session[:finished_tasks]
-    erb:comp_date
-
+    erb :comp_date
   end
 
   post "/completed" do
+
+    @finished_tasks = session[:finished_tasks]
+
+    @tasks = TaskList::Actions.new("tasks.db")
+
+    puts @finished_tasks
+
+    @finished_tasks.each do |fin_task|
+      @new_comp_date = params[fin_task.to_sym]
+      @tasks.update_comp_date(fin_task, @new_comp_date)
+
+    end
+
     redirect '/'
   end
 

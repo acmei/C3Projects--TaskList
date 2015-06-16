@@ -8,10 +8,6 @@
   	<% @all_tasks.each do |task| %>
 			<label><input type="checkbox" name="finished_tasks[]" value="<%= task[1] %>"><span class="task-1"><%= task[1] %></span> <span class="task-2"><%= task[2] %></span> <span class="task-3"><%= task[3] %></span></label>
   	<% end %>
-    <input type="submit" value="Completed"> 
+    <input type="submit" value="Add/Remove a Completion Date"> 
   </form>
-
-  <pre>
-  	<%= params %>
-  </pre>
 </div>
